@@ -26,9 +26,10 @@ jobs:
       run: dotnet build --no-restore
     - name: Test
       run: dotnet test --logger trx --results-directory "TestResults"
+      
     - name: Upload test results
       uses: actions/upload-artifact@v2
-      if: $({ always() })
+      if: ${{ always() }}
       with:
         name: test-results
         path: TestResults
