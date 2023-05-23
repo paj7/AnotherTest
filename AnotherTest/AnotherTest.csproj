@@ -18,7 +18,7 @@
   </ItemGroup>
 
   <Target Name="PostBuild" AfterTargets="PostBuildEvent">
-    <Exec Command="if $(ConfigurationName) == Debug then copy &quot;$(SolutionDir)Model\bin\ModelDescription.xml&quot; &quot;$(ProjectDir)\bin\Debug\net6.0\ModelDescription.xml&quot;&#xD;&#xA;if $(ConfigurationName) == Release then copy &quot;$(SolutionDir)Model\bin\ModelDescription.xml&quot; &quot;$(ProjectDir)\bin\Release\net6.0\ModelDescription.xml&quot;" />
+    <Exec Command="if $(ConfigurationName) == Debug (copy &quot;$(SolutionDir)Model\bin\ModelDescription.xml&quot; &quot;$(ProjectDir)\bin\Debug\net6.0\ModelDescription.xml&quot;)&#xD;&#xA;if $(ConfigurationName) == Release (copy &quot;$(SolutionDir)Model\bin\ModelDescription.xml&quot; &quot;$(ProjectDir)\bin\Release\net6.0\ModelDescription.xml&quot;)" />
   </Target>
 
 </Project>
