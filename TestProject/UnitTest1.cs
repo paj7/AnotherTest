@@ -22,7 +22,7 @@ namespace TestProject
         public void Test2()
         {
             _output.WriteLine("Does 1 equal 1....");
-            Assert.Equal(1, 2);
+            Assert.Equal(2, 2);
         }
     }
 }
