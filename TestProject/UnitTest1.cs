@@ -31,12 +31,21 @@ namespace TestProject
 
         private static string GetFormattedDateTime()
         {
-            var timeZoneInfo = TimeZoneInfo.FindSystemTimeZoneById(TimeZoneInfo.Local.Id);
-            var abbreviation = TZNames.GetAbbreviationsForTimeZone(timeZoneInfo.Id, CultureInfo.CurrentCulture.Name).Standard;
+            try
+            {
+                var timeZoneInfo = TimeZoneInfo.FindSystemTimeZoneById(TimeZoneInfo.Local.Id);
+                var abbreviation = TZNames.GetAbbreviationsForTimeZone(timeZoneInfo.Id, CultureInfo.CurrentCulture.Name).Standard;
 
-            //return DateTime.Now.ToString($"ddd MMM dd HH:mm:ss '{abbreviation}' yyyy");
+                //return DateTime.Now.ToString($"ddd MMM dd HH:mm:ss '{abbreviation}' yyyy");
 
-            return "bob";
+                return "bob";
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine($"Could not find language for the code {CultureInfo.CurrentCulture.Name}");
+                throw;
+            }
+            
         }
 
     }
