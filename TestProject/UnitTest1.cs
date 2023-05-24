@@ -1,4 +1,5 @@
 using System.Globalization;
+using TimeZoneNames;
 using Xunit.Abstractions;
 
 namespace TestProject
@@ -31,7 +32,7 @@ namespace TestProject
         private static string GetFormattedDateTime()
         {
             var timeZoneInfo = TimeZoneInfo.FindSystemTimeZoneById(TimeZoneInfo.Local.Id);
-            //var abbreviation = TZNames.GetAbbreviationsForTimeZone(timeZoneInfo.Id, CultureInfo.CurrentCulture.Name).Standard;
+            var abbreviation = TZNames.GetAbbreviationsForTimeZone(timeZoneInfo.Id, CultureInfo.CurrentCulture.Name).Standard;
 
             //return DateTime.Now.ToString($"ddd MMM dd HH:mm:ss '{abbreviation}' yyyy");
 
